@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SERGITEL - Especialistas em instalação, manutenção e comércio de equipamentos telefônicos. Soluções completas em telecomunicações com tradição e tecnologia.">
+    <title>SERGITEL - Telecomunicações e Equipamentos</title>
+    <style>
+        :root {
+            --primary: #00468c; /* Azul Royal Profissional */
+            --secondary: #002d5a; /* Azul Marinho Sólido */
+            --accent: #f39c12; /* Laranja para Destaque */
+            --light: #f4f7fa;
+            --white: #ffffff;
+            --dark: #1c2833;
+            --success: #25d366; /* Verde WhatsApp */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 5px solid var(--primary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 45, 90, 0.85), rgba(0, 45, 90, 0.85)), url('https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 140px 0 120px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 70, 140, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Services */
+        .services { padding: 100px 0; background: var(--light); }
+        .section-title { text-align: center; margin-bottom: 70px; }
+        .section-title h2 { font-size: 32px; color: var(--secondary); text-transform: uppercase; margin-bottom: 15px; }
+        .section-title .divider { width: 60px; height: 4px; background: var(--primary); margin: 0 auto; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 45px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .card i { font-size: 45px; color: var(--primary); margin-bottom: 25px; display: block; }
+        .card h3 { font-size: 22px; color: var(--secondary); margin-bottom: 15px; }
+
+        /* Trust Section */
+        .trust { padding: 100px 0; }
+        .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .trust-content h2 { font-size: 30px; margin-bottom: 25px; color: var(--secondary); }
+        
+        .legal-box {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 45px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .legal-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        .legal-item label { display: block; font-size: 10px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 5px; }
+        .legal-item strong { font-size: 16px; }
+
+        /* Footer */
+        footer { background: var(--dark); color: #7f8c8d; padding: 80px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; margin-bottom: 60px; }
+        .footer-h4 { color: var(--white); margin-bottom: 25px; text-transform: uppercase; font-size: 16px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 15px; }
+        .footer-links a { color: #7f8c8d; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { text-align: center; border-top: 1px solid #2c3e50; padding-top: 30px; font-size: 11px; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }
+        .modal-content { background: var(--white); margin: 5% auto; padding: 50px; width: 90%; max-width: 750px; border-radius: 8px; }
+        .close { float: right; font-size: 32px; cursor: pointer; color: var(--dark); }
+
+        /* WhatsApp */
+        .whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--success);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 1500;
+            transition: 0.3s;
+        }
+        .whatsapp:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .trust-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <a href="#" class="logo">SERGI<span>TEL</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#empresa">A Empresa</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Soluções Completas em Telecomunicações</h1>
+            <p>Especialistas em instalação, manutenção e comércio de equipamentos telefônicos com foco em eficiência e tecnologia de ponta.</p>
+            <a href="https://wa.me/5511999999999" class="btn btn-primary">Falar com Especialista</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossas Especialidades</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <i>📞</i>
+                    <h3>Instalação Técnica</h3>
+                    <p>Projetos e implementação de sistemas telefônicos modernos para empresas e residências.</p>
+                </div>
+                <div class="card">
+                    <i>🛠️</i>
+                    <h3>Manutenção Preventiva</h3>
+                    <p>Suporte técnico especializado para garantir a estabilidade e o pleno funcionamento da sua rede.</p>
+                </div>
+                <div class="card">
+                    <i>🛒</i>
+                    <h3>Comércio de Equipamentos</h3>
+                    <p>Venda de aparelhos e infraestrutura de telefonia das melhores marcas do mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust" id="empresa">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-content">
+                    <h2>Tradição e Tecnologia</h2>
+                    <p>A SERGITEL é uma empresa focada na excelência do atendimento e na qualidade técnica de seus serviços. Com anos de experiência no mercado de telecomunicações, atuamos com foco em prover soluções que conectam pessoas e negócios de forma eficiente.</p>
+                    <p>Nossa equipe técnica é altamente capacitada, garantindo instalações seguras e manutenções ágeis para que você nunca fique desconectado.</p>
+                </div>
+                <div class="legal-box">
+                    <div class="legal-item">
+                        <label>Razão Social</label>
+                        <strong>SERGITEL INSTALACAO, MANUTENCAO E COMERCIO DE EQUIPAMENTOS TELEFONICOS LTDA</strong>
+                    </div>
+                    <div class="legal-item">
+                        <label>CNPJ</label>
+                        <strong>69.177.608/0001-92</strong>
+                    </div>
+                    <div class="legal-item">
+                        <label>Segmento Principal</label>
+                        <strong>Telecomunicações e Comércio Especializado</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 class="footer-h4">Sergitel</h4>
+                    <p>Conectando você ao futuro das telecomunicações.</p>
+                </div>
+                <div>
+                    <h4 class="footer-h4">Políticas</h4>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)" onclick="openModal('privacy')">Política de Privacidade</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('terms')">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-h4">Contato</h4>
+                    <p style="font-size: 14px;">Email: contato@sergitel.com.br</p>
+                    <p style="font-size: 14px; margin-top: 10px;">Atendimento Comercial e Técnico</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SERGITEL LTDA. CNPJ: 69.177.608/0001-92. Todos os direitos reservados.</p>
+                <p style="margin-top: 15px; opacity: 0.4;">Este site é uma plataforma informativa independente focada em serviços técnicos de telecomunicações.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp">💬</a>
+
+    <!-- Modals -->
+    <div id="privacy" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacy')">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p style="margin-top: 25px;">A SERGITEL respeita a sua privacidade. Os dados fornecidos através de nossos canais de atendimento são utilizados estritamente para a finalidade de orçamentos e prestação de serviços técnicos. Suas informações são armazenadas de forma segura e não são compartilhadas com terceiros sem consentimento prévio.</p>
+        </div>
+    </div>
+
+    <div id="terms" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('terms')">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p style="margin-top: 25px;">As informações contidas neste site são de caráter informativo. A execução de qualquer serviço de instalação ou manutenção depende de vistoria técnica prévia e aprovação de orçamento formalizado pela nossa equipe comercial.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') { event.target.style.display = "none"; }
+        }
+    </script>
+</body>
+</html>
